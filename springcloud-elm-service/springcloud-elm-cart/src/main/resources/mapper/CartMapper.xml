@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.he.elm.mapper.CartMapper">
+    <resultMap id="cartResultMap" type="com.he.elm.common.pojo.Cart" >
+        <id column="cartId" property="cartId"/>
+        <result column="foodId" property="foodId"/>
+        <result column="businessId" property="businessId"/>
+        <result column="userId" property="userId"/>
+        <result column="quantity" property="quantity"/>
+
+    </resultMap>
+    <resultMap id="foodResultMap" type="com.he.elm.common.pojo.Food">
+        <id column="foodId" property="foodId"/>
+        <result column="foodName" property="foodName"/>
+        <result column="foodExplain" property="foodExplain"/>
+        <result column="foodImg" property="foodImg"/>
+        <result column="foodPrice" property="foodPrice"/>
+        <result column="businessId" property="businessId"/>
+        <result column="remarks" property="remarks"/>
+    </resultMap>
+    <resultMap id="businessResultMap" type="com.he.elm.common.pojo.Business">
+        <id column="businessId" property="businessId"/>
+        <result column="businessName" property="businessName"/>
+        <result column="businessAddress" property="businessAddress"/>
+        <result column="businessExplain" property="businessExplain"/>
+        <result column="businessImg" property="businessImg"/>
+        <result column="orderTypeId" property="orderTypeId"/>
+        <result column="starPrice" property="starPrice"/>
+        <result column="deliveryPrice" property="deliveryPrice"/>
+        <result column="remarks" property="remarks"/>
+    </resultMap>
+    <select id="listCart" resultMap="cartResultMap">
+    select c.*
+    from cart c left join food f on c.foodId=f.foodId
+                left join business b on c.businessId=b.businessId
+    where c.userId=#{userId}
+    <if test="businessId!=null and businessId!=''">
+        and c.businessId=#{businessId}
+    </if>
+    </select>
+</mapper>

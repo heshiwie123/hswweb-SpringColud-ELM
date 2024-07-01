@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/springcloud-elm-basic/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springcloud-elm-basic/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springcloud-elm-gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springcloud-elm-gateway/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springcloud-elm-model/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springcloud-elm-model/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springcloud-elm-openfeign-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springcloud-elm-openfeign-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springcloud-elm-service/springcloud-elm-authentication/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springcloud-elm-service/springcloud-elm-authentication/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springcloud-elm-service/springcloud-elm-business/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springcloud-elm-service/springcloud-elm-business/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springcloud-elm-service/springcloud-elm-cart/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springcloud-elm-service/springcloud-elm-cart/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springcloud-elm-service/springcloud-elm-file/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springcloud-elm-service/springcloud-elm-file/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springcloud-elm-service/springcloud-elm-food/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springcloud-elm-service/springcloud-elm-food/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springcloud-elm-service/springcloud-elm-orders/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springcloud-elm-service/springcloud-elm-orders/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springcloud-elm-service/springcloud-elm-user/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springcloud-elm-service/springcloud-elm-user/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springcloud-elm-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springcloud-elm-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springcloud-elm-utils/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springcloud-elm-utils/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

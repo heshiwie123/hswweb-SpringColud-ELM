@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.he.elm.mapper.UserMapper">
+    <resultMap id="UserResultMap" type="com.he.elm.common.pojo.User">
+        <!--column表示数据库查询结果集中的列名或别名-->
+        <!--property表示对应于实体类中的属性名-->
+        <id column="userId" property="userId"/>
+        <result column="userName" property="userName"/>
+        <result column="password" property="password"/>
+        <result column="userSex" property="userSex"/>
+        <result column="userImg" property="userImg"/>
+        <result column="phoneNum" property="phoneNum"/>
+        <result column="profile_photo" property="profilePhoto"/>
+        <result column="state" property="state"/>
+        <collection property="identitySet" resultMap="identityResultMap"/>
+    </resultMap>
+
+    <resultMap id="identityResultMap" type="com.he.elm.common.pojo.Identity">
+        <id column="roleId" property="id"/>
+        <result column="name" property="name"/>
+    </resultMap>
+
+    <select id="getUserByPhoneNum" resultMap="UserResultMap" resultType="com.he.elm.common.pojo.User">
+        select u.userId as userId,
+               u.userName,
+               u.password,
+               u.userSex,
+               u.userImg,
+               u.phoneNum,
+               u.state,
+               i.id     as roleId,
+               i.name
+        FROM user u
+                 left join user_identity ui on u.userId = ui.user_id
+                 left join identity i on ui.identity_id = i.id
+        where phoneNum = #{phoneNum}
+          and u.state = 0
+    </select>
+    <select id="selectUserPasswordById">
+        select user.password
+        from user
+        where user.id = #{userId}
+    </select>
+    <update id="updateUser">
+        update user u
+        set u.username=#{user.username},
+            u.age=#{user.age},
+            u.sex=#{user.sex},
+            u.signature=#{user.signature},
+            u.profile_photo=#{user.profilePhoto},
+            u.phone=#{user.phone},
+            u.email=#{user.email},
+            u.state=#{user.state},
+            u.sum_followed=#{user.sumFollowed},
+            u.sum_following =#{user.sumFollowing}
+        where u.id = #{user.id}
+    </update>
+    <update id="updateUserPasswordById">
+        update user
+        set user.password=#{password}
+        where user.id = #{userId}
+    </update>
+    <insert id="userDefaultIdentity">
+        insert into user_identity(user_id, identity_id)
+        values ((select u.userId as user_id from user u where u.phoneNum = #{userPhone}), (select i.id as  identity_id from identity i where i.name='普通用户'))
+    </insert>
+    <insert id="userAddIdentity">
+        insert into user_identity(user_id, identity_id)
+        values ( #{userId},  #{identityId} )
+    </insert>
+
+</mapper>

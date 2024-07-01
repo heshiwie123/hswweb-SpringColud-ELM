@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.he.elm.mapper.IdentityMapper">
+    <select id="selectMenuByIdentityIdS" resultType="com.he.elm.common.pojo.Menu">
+        SELECT
+        m.id,
+        m.name,
+        m.parent_id,
+        m.perms,
+        m.menu_type
+        FROM identity i
+        LEFT JOIN identity_menu imenu ON i.id = imenu.identity_id
+        LEFT JOIN menu m ON m.id = imenu.menu_id
+        WHERE i.id IN
+        <foreach item="id" index="index" collection="Ids" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </select>
+
+</mapper>
